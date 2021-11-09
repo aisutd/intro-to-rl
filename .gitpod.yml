@@ -1,0 +1,19 @@
+image:
+    file: util/.gitpod.Dockerfile
+
+tasks:
+    - name: Recordings Server
+      init: pip install gym
+        pip install pyglet
+      command: python3 -m http.server 3000 -d "/workspace/AISxACM/recordings"
+
+    - name: for u <3
+      command: mkdir recordings
+
+ports:
+    - port: 3000
+      onOpen: open-preview
+
+vscode:
+    extensions:
+        - ms-python.python
